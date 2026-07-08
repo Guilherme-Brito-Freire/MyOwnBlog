@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a new post</title>
+    <link rel="stylesheet" th:href="@{/public/style.css}">
+</head>
+<body>
+
+<div th:insert="~{fragments/navbar}" ></div>
+
+<div class="container">
+    <div class="form-control">
+        <form th:action="@{/admin/add}" method="post">
+
+            <h2>Escreva Aqui o seu Post: </h2>
+
+            <input type="text" name="name" placeholder="Título" required>
+            <textarea name="content" placeholder="Conteúdo..." required></textarea>
+
+            <div class="form-actions">
+                <button type="submit">Criar Post</button>
+                <a th:href="@{/}" class="nav-control">Voltar</a>
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Entrar - My Own Blog</title>
+    <link rel="stylesheet" th:href="@{/public/style.css}">
+</head>
+<body>
+
+<div th:insert="~{fragments/navbar}"></div>
+
+<div class="container">
+    <div th:if="${param.error}" class="alert alert-error">
+        Usuário ou senha incorretos. Tente novamente!
+    </div>
+
+    <div th:if="${param.logout}" class="alert alert-success">
+        Você saiu do sistema com sucesso!
+    </div>
+
+    <form class="styled-form" th:action="@{/auth/login}" method="post">
+        <label for="username">Nome de usuário</label>
+        <input type="text" name="username" id="username" placeholder="Digite seu usuário" required>
+        
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
+        
+        <div class="form-actions">
+            <button type="submit">Entrar</button>
+            <a th:href="@{/}" class="nav-control">Voltar</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+
+    <div th:insert="~{fragments/navbar}" ></div>
+
+
+    <div class="container">
+        <div class="top-action" sec:authorize="hasRole('ROLE_ADMIN')">
+            <a th:href="@{/admin/add}" class="btn">Criar novo post</a>
+        </div>
+
+        <h1>Bem vindo ao meu blog pessoal. Onde escrevo coisas pessoais XD !</h1>
+        <ul class="space w100">
+            <li th:each="post : ${posts}" class="feed-card">
+                <h2 th:text="${post.name}"></h2>
+                <p th:text="${post.content}"></p>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

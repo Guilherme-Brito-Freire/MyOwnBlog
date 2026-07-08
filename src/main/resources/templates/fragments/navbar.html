@@ -1,0 +1,20 @@
+<div xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" th:fragment="navbar">
+    <nav>
+        <div class="nav-wrapper">
+            <h1>My Own Blog</h1>
+
+            <div class="nav-actions">
+                <div sec:authorize="isAuthenticated()">
+                    <form th:action="@{/logout}" method="POST">
+                        <button type="submit" class="nav-control">Sair</button>
+                    </form>
+                </div>
+    
+                <div sec:authorize="isAnonymous()">
+                    <a th:href="@{/auth/login}" class="nav-control">Login</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</div>
