@@ -1,0 +1,26 @@
+<head>
+    <meta charset="UTF-8">
+    <!--CSRF PROTECTION-->
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+    <!--TITLE NAME-->
+    <title th:text="${preferences.blogName}" >Hello World</title>
+
+    <!--FAVICON (Ícone do Navegador)-->
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
+
+    <!--DARK AND LIGHT MODE SWITCH-->
+    <link
+            th:if="${preferences.defaultTheme}"
+
+            rel="stylesheet" href="/public/themes/light.css">
+
+    <link
+            th:unless="${preferences.defaultTheme}"
+
+            rel="stylesheet" href="/public/themes/dark.css">
+
+    <!--MAIN CSS IMPORTER-->
+    <link rel="stylesheet" href="/public/style.css">
+</head>

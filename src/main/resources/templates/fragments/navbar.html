@@ -1,7 +1,7 @@
 <div xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" th:fragment="navbar">
     <nav>
         <div class="nav-wrapper">
-            <h1>My Own Blog</h1>
+            <h1 th:text="${preferences.blogName}">My Own Blog</h1>
 
             <div class="nav-actions">
                 <div sec:authorize="isAuthenticated()">

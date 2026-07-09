@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:insert="~{fragments/header}" ><title>IMPORTER HEAD</title></head>
+
+<body hx-headers='js:{"X-CSRF-TOKEN": document.querySelector("meta[name=\"_csrf\"]").getAttribute("content")}'>
+
+<div th:insert="~{fragments/navbar}" ></div>
+
+<div class="container">
+
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <h1>Preferências</h1>
+        <p>Personalize a aparência e os detalhes principais do seu blog pessoal.</p>
+    </div>
+
+    <form class="styled-form" th:action="@{/admin/settings/save}" method="post">
+        <label for="blogName">Nome do Blog</label>
+        <input th:value="${preferences.blogName}" type="text" name="blogName" id="blogName" placeholder="Ex: Meu Blog Pessoal" required>
+        
+        <label>Tema Escuro</label>
+        <div class="toggle-wrapper">
+            <label class="toggle-switch">
+                <input type="checkbox" name="defaultTheme" id="defaultTheme" style="margin-bottom: 0;" checked="checked">
+                <span class="toggle-slider"></span>
+            </label>
+            <span class="toggle-label-text">Ativar tema claro por padrão</span>
+        </div>
+        
+        <label for="introMessage">Mensagem de Introdução</label>
+        <textarea th:text="${preferences.introMessage}" name="introMessage" id="introMessage" placeholder="Escreva uma mensagem de boas-vindas..." rows="4" ></textarea>
+
+        <div class="form-actions">
+            <button type="submit">Salvar Preferências</button>
+            <a th:href="@{/}" class="nav-control" style="background-color: var(--text-secondary);">Cancelar e Voltar</a>
+        </div>
+    </form>
+
+    <!--HTMX IMPORT-->
+    <!--suppress HtmlUnknownTarget -->
+    <script src="public/htmx.js"></script>
+
+</div>
+
+</body>
+</html>

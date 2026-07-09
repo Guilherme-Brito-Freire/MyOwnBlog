@@ -8,6 +8,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class MyOwnBlogApplication {
 
 	public static void main(String[] args) {
+
+		// Load default preferences
+
+
 		SpringApplication.run(MyOwnBlogApplication.class, args);
 	}
 

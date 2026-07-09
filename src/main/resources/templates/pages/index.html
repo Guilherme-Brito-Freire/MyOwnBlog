@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="https://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
-<head>
-    <meta charset="UTF-8">
-    <title>Hello World</title>
-    <link rel="stylesheet" href="public/style.css">
-</head>
+
+<head th:insert="~{fragments/header}" ><title>IMPORTER HEAD</title></head>
+
 <body>
 
     <div th:insert="~{fragments/navbar}" ></div>
@@ -14,9 +12,10 @@
     <div class="container">
         <div class="top-action" sec:authorize="hasRole('ROLE_ADMIN')">
             <a th:href="@{/admin/add}" class="btn">Criar novo post</a>
+            <a th:href="@{/admin/settings}" class="btn">Preferências</a>
         </div>
 
-        <h1>Bem vindo ao meu blog pessoal. Onde escrevo coisas pessoais XD !</h1>
+        <h1 th:text="${preferences.introMessage}" >Bem-vindo ao meu blogue pessoal. Onde escrevo coisas pessoais XD!</h1>
         <ul class="space w100">
             <a th:each="post : ${posts}" th:href="@{/article(articleId=${post.id})}">
                 <li class="feed-card">
