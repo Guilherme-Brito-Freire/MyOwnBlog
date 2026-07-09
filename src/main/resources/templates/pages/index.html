@@ -20,7 +20,7 @@
             <a th:each="post : ${posts}" th:href="@{/article(articleId=${post.id})}">
                 <li class="feed-card">
                     <h2 th:text="${post.name}"></h2>
-                    <p th:text="${post.content}"></p>
+                    <p th:text="${post.description}"></p>
                 </li>
             </a>
 
