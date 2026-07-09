@@ -7,6 +7,11 @@
     --accent: #5ba37e; /* Lighter, sophisticated sage green for contrast */
     --accent-hover: #72b995;
     --nav-bg: rgba(18, 20, 19, 0.8);
+    
+    --input-bg: rgba(0, 0, 0, 0.2);
+    --input-bg-focus: rgba(0, 0, 0, 0.4);
+    --input-border: rgba(255, 255, 255, 0.1);
+    --input-focus-ring: rgba(91, 163, 126, 0.25);
 
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
