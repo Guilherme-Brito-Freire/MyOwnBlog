@@ -24,4 +24,9 @@ public class ArticleService {
         return articleModel.orElse(null);
     }
 
+    public void delete(String id){
+        Optional<ArticleModel> model = articleRepository.findById(id);
+        model.ifPresent(articleRepository::delete);
+    }
+
 }

@@ -3,19 +3,31 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8">
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
     <title>Hello World</title>
     <!--suppress HtmlUnknownTarget -->
     <link rel="stylesheet" href="public/style.css">
 </head>
-<body>
+<body hx-headers='js:{"X-CSRF-TOKEN": document.querySelector("meta[name=\"_csrf\"]").getAttribute("content")}'>
 
 <div th:insert="~{fragments/navbar}" ></div>
 
 <div class="container">
+
+    <div class="top-action" sec:authorize="hasRole('ROLE_ADMIN')">
+        <button type="button" class="btn" th:hx-delete="@{/article/remove(articleId=${article.id})}" hx-swap="none"> Deletar Post </button>
+    </div>
+
     <h1 th:text="${article.name}"></h1>
     <p th:text="${article.content}">
 
     </p>
+
+    <!--HTMX IMPORT-->
+    <!--suppress HtmlUnknownTarget -->
+    <script src="public/htmx.js"></script>
+
 </div>
 
 </body>
