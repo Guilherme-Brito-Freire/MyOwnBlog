@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <!--suppress HtmlUnknownTarget -->
+    <link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+
+<div th:insert="~{fragments/navbar}" ></div>
+
+<div class="container">
+    <h1 th:text="${article.name}"></h1>
+    <p th:text="${article.content}">
+
+    </p>
+</div>
+
+</body>
+</html>

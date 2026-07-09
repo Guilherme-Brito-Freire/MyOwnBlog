@@ -8,29 +8,29 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@Controller("/")
+@Controller
 @AllArgsConstructor
 public class FeedController {
 
-    private final ArticleRepository articleRepository;
+    private final FeedService feedService;
 
     @GetMapping("/")
-    public String index(Model model) {
-        model.addAttribute("posts", articleRepository.findAll());
+    public String indexPage(Model model) {
+        model.addAttribute("posts", feedService.findAll());
         return "pages/index";
     }
 
     // About Feed Creation
 
     @GetMapping("/admin/add") // Creation Page
-    public String addANewPost(Model model) {
+    public String addANewPostPage(Model model) {
         return "pages/newPost";
     }
 
     @PostMapping("/admin/add") // Creation Page
     public String addANewPostForm(ArticleModel reqBody) {
 
-        articleRepository.save(reqBody);
+        feedService.save(reqBody);
 
         return "redirect:/";
     }

@@ -18,4 +18,8 @@ public class FeedService {
         return articleRepository.findAll();
     }
 
+    public void save(ArticleModel reqBody) {
+        articleRepository.save(reqBody);
+    }
+
 }

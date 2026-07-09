@@ -18,10 +18,13 @@
 
         <h1>Bem vindo ao meu blog pessoal. Onde escrevo coisas pessoais XD !</h1>
         <ul class="space w100">
-            <li th:each="post : ${posts}" class="feed-card">
-                <h2 th:text="${post.name}"></h2>
-                <p th:text="${post.content}"></p>
-            </li>
+            <a th:each="post : ${posts}" th:href="@{/article(articleId=${post.id})}">
+                <li class="feed-card">
+                    <h2 th:text="${post.name}"></h2>
+                    <p th:text="${post.content}"></p>
+                </li>
+            </a>
+
         </ul>
     </div>
 
