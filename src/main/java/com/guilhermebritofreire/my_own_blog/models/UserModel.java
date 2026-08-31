@@ -2,7 +2,6 @@ package com.guilhermebritofreire.my_own_blog.models;
 
 import lombok.Data;
 import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;

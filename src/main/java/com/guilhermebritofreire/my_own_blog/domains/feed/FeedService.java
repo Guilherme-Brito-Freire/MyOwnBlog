@@ -5,7 +5,6 @@ import com.guilhermebritofreire.my_own_blog.repositories.ArticleRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.management.ConstructorParameters;
 import java.util.List;
 
 @Service

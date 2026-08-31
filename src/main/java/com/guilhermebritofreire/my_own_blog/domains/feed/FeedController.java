@@ -1,7 +1,6 @@
 package com.guilhermebritofreire.my_own_blog.domains.feed;
 
 import com.guilhermebritofreire.my_own_blog.models.ArticleModel;
-import com.guilhermebritofreire.my_own_blog.repositories.ArticleRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

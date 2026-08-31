@@ -2,7 +2,6 @@ package com.guilhermebritofreire.my_own_blog.utils.globalData;
 
 import com.guilhermebritofreire.my_own_blog.models.PreferencesModel;
 import com.guilhermebritofreire.my_own_blog.repositories.PreferencesRepository;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
